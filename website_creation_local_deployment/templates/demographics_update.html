@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Date Table</title>
+    {% if message %}
+    <script>
+     var message = "{{ message }}";
+     alert(message);
+   </script>
+   {% endif %}
+   
+  <link rel="stylesheet" href="../static/css/style_for_updated.css">
+  </head>
+  <body>
+    <main class="table" style="overflow: overlay;">
+      <section class="table_header">
+        <br>
+        <h1 style="margin-left: 19px;">Demographics Table</h1>
+      </section>
+    <form action="/delete_update_insert" method="POST">
+      <section class="table__body">
+        <h3>Provide condition for Update</h3><br><br>
+        <table>
+            <tr>
+              <th>Select</th>
+              <th>Column Name</th>
+              <th>Data Type</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="dist_id"></td>
+              <td>dist_id</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="dist_id_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="dist_name"></td>
+              <td>dist_name</td>
+              <td><p class="status shipped">varchar</p></td>
+              <td><input type="text" name="dist_name_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="region_name"></td>
+              <td>region_name</td>
+              <td><p class="status shipped">varchar</p></td>
+              <td><input type="text" name="region_name_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="no_inhab"></td>
+              <td>no_inhab</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="no_inhab_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="no_muncp_lt_499"></td>
+              <td>no_muncp_lt_499</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="no_muncp_lt_499_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="no_muncp_500_1499"></td>
+              <td>no_muncp_500_1499</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="no_muncp_500_1499_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="no_muncp_2000_9999"></td>
+              <td>no_muncp_2000_9999</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="no_muncp_2000_9999_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="no_muncp_gt_10000"></td>
+              <td>no_muncp_gt_10000</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="no_muncp_gt_10000_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="no_cities"></td>
+              <td>no_cities</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="no_cities_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="ratio_urban_inhab"></td>
+              <td>ratio_urban_inhab</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="text" name="ratio_urban_inhab_where"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="column_where[]" value="avg_sal"></td>
+                <td>avg_sal</td>
+                <td><p class="status delivered">Int</p></td>
+                <td><input type="text" name="avg_sal_where"></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="column_where[]" value="unemploy_rate_1995"></td>
+                <td>unemploy_rate_1995</td>
+                <td><p class="status delivered">Int</p></td>
+                <td><input type="text" name="unemploy_rate_1995_where"></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="column_where[]" value="unemploy_rate_1996"></td>
+                <td>unemploy_rate_1996</td>
+                <td><p class="status delivered">Int</p></td>
+                <td><input type="text" name="unemploy_rate_1996_where"></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="column_where[]" value="entrep_per_1000_inhab"></td>
+                <td>entrep_per_1000_inhab</td>
+                <td><p class="status delivered">Int</p></td>
+                <td><input type="text" name="entrep_per_1000_inhab_where"></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="column_where[]" value="no_crimes_1995"></td>
+                <td>no_crimes_1995</td>
+                <td><p class="status delivered">Int</p></td>
+                <td><input type="text" name="no_crimes_1995_where"></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="column_where[]" value="no_crimes_1996"></td>
+                <td>no_crimes_1996</td>
+                <td><p class="status delivered">Int</p></td>
+                <td><input type="text" name="no_crimes_1996_where"></td>
+              </tr>
+            </table>
+            
+          <br><br>
+
+          <label>Provide new value for Update</label><br><br>
+      <table>
+        <tr>
+          <th>Select</th>
+          <th>Column Name</th>
+          <th>Data Type</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="dist_id"></td>
+          <td>dist_id</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="dist_id_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="dist_name"></td>
+          <td>dist_name</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="dist_name_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="region_name"></td>
+          <td>region_name</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="region_name_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="no_inhab"></td>
+          <td>no_inhab</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="no_inhab_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="no_muncp_lt_499"></td>
+          <td>no_muncp_lt_499</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="no_muncp_lt_499_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="no_muncp_500_1499"></td>
+          <td>no_muncp_500_1499</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="no_muncp_500_1499_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="no_muncp_2000_9999"></td>
+          <td>no_muncp_2000_9999</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="no_muncp_2000_9999_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="no_muncp_gt_10000"></td>
+          <td>no_muncp_gt_10000</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="no_muncp_gt_10000_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="no_cities"></td>
+          <td>no_cities</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="no_cities_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="ratio_urban_inhab"></td>
+          <td>ratio_urban_inhab</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="ratio_urban_inhab_new_value"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="column_new_value[]" value="avg_sal"></td>
+            <td>avg_sal</td>
+            <td><p class="status delivered">Int</p></td>
+            <td><input type="text" name="avg_sal_new_value"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="column_new_value[]" value="unemploy_rate_1995"></td>
+            <td>unemploy_rate_1995</td>
+            <td><p class="status delivered">Int</p></td>
+            <td><input type="text" name="unemploy_rate_1995_new_value"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="column_new_value[]" value="unemploy_rate_1996"></td>
+            <td>unemploy_rate_1996</td>
+            <td><p class="status delivered">Int</p></td>
+            <td><input type="text" name="unemploy_rate_1996_new_value"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="column_new_value[]" value="entrep_per_1000_inhab"></td>
+            <td>entrep_per_1000_inhab</td>
+            <td><p class="status delivered">Int</p></td>
+            <td><input type="text" name="entrep_per_1000_inhab_new_value"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="column_new_value[]" value="no_crimes_1995"></td>
+            <td>no_crimes_1995</td>
+            <td><p class="status delivered">Int</p></td>
+            <td><input type="text" name="no_crimes_1995_new_value"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="column_new_value[]" value="no_crimes_1996"></td>
+            <td>no_crimes_1996</td>
+            <td><p class="status delivered">Int</p></td>
+            <td><input type="text" name="no_crimes_1996_new_value"></td>
+          </tr>
+        </table>
+      <input type="submit" value="Submit" class="mainpagesubmit">
+        
+      </form>
+  </section>
+      <br><br>
+    <form action="/go_to_page" method="POST">
+      <select name="page" class="my_dropdown">
+        <option value="table_choose.html">Choose different table</option>
+        <option value="main_page.html">Choose different operation</option>
+      </select>
+      <input type="submit" value="Go to page" class="gotopage">
+    </form>
+    </main>
+  </body>
+  </html>

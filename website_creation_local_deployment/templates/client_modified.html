@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Client Table</title>
+
+ {% if message %}
+ <script>
+  var message = "{{ message }}";
+  alert(message);
+</script>
+{% endif %}
+
+
+  <br>
+  <br>
+    <link rel="stylesheet" href="../static/css/style_for_modified.css">
+  </head>
+  <body>
+    <main class="table">
+      <section class="table_header">
+        <br>
+    <h1 style="margin-left: 19px;">Client Table</h1>
+  </section>
+    <form action="/delete_update_insert" method="POST" onsubmit="return validateForm();">
+<section class="table__body">
+      <table>
+        <tr>
+          <th>Select</th>
+          <th>Column Name</th>
+          <th>Data Type</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="client_id"></td>
+          <td>client_id</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="client_id"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="birth_number"></td>
+          <td>birth_number</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="date" name="birth_number"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="district_id"></td>
+          <td>district_id</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="district_id"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="gender"></td>
+          <td>gender</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="gender"></td>
+        </tr>
+
+      </table>
+      <input type="submit" value="Submit" class="mainpagesubmit">
+      <script>
+        function validateForm() {
+          var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+          if (checkboxes.length === 0) {
+            alert("Please select at least one option.");
+            return false;
+          }
+          return true;
+        }
+      </script>
+      
+    </form>
+    <br><br>
+  </section>
+  <br>
+  <br>
+  <br>
+    <form action="/go_to_page" method="POST" class = "form_move_up">
+    <select name="page" class="my_dropdown">
+        <option value="table_choose.html">Choose different table</option>
+        <option value="main_page.html">Choose different operation</option>
+      </select>
+    <input type="submit" value="Go to page" class="gotopage">
+    </form>
+  </main>
+
+</body>
+</html>    

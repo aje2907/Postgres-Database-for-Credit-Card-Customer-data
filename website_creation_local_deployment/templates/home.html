@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Banking App</title>
+  <link rel="stylesheet" href="../static/css/homepagestyle.css">
+  </head>
+<body>
+  <div class="container">
+    <nav> 
+      <img src="../static/images/logo.png" class="logo" style="
+      margin-bottom: -43px;
+  ">
+      <ul>
+        <li><a href="../static/static_html/aboutus.html">About</a></li>
+        <li><a href="../static/static_html/contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="text-box">
+      <p>I'M</p>
+      <h1>BANKING APP</h1>
+      <h3>To fulfill your banking needs</h3>
+      <div class="row">
+        <form action="/user_check" method="post">
+          <br>
+          <br>
+          <div class="dropdown" style="
+          margin-top: -16px;
+          background: black;
+      ">
+            <select id="user_check" name="user_check" class="dropdown_box solid">
+              <option value="" disabled selected>Are you an existing user or a new user?</option>
+              <option value="Existing User">Existing User</option>
+              <option value="New User">New User</option>
+            </select>
+          </div>
+          <input type="submit" value="Connect with Me &#x27F6;" class="dropdown" style="
+          position: absolute;
+          margin-left: 25%;
+          bottom: 0%;
+          background: transparent;
+          cursor: pointer;
+          background: black;
+      ">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

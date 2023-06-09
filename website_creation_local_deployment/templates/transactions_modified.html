@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Transactions  Table</title>
+    {% if message %}
+    <script>
+     var message = "{{ message }}";
+     alert(message);
+   </script>
+   {% endif %}
+   
+    <link rel="stylesheet" href="../static/css/style_for_modified.css">
+  </head>
+  <body>
+    <main class="table" style="
+    height: 0%;
+">
+      <section class="table_header">
+        <br>
+    <h1 style="margin-left: 19px;">Transactions Table</h1>
+</section>
+    <form action="/delete_update_insert" method="POST" onsubmit="return validateForm();">
+<section class="table__body">
+      <table>
+        <tr>
+          <th>Select</th>
+          <th>Column Name</th>
+          <th>Data Type</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="trans_id"></td>
+          <td>trans_id</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="trans_id"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="account_id"></td>
+          <td>account_id</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="text" name="account_id"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="date"></td>
+          <td>date</td>
+          <td><p class="status state">date</p></td>
+          <td><input type="date" name="date"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="type"></td>
+          <td>type</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="type"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="operation"></td>
+          <td>operation</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="operation"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="amount"></td>
+          <td>amount</td>
+          <td><p class="status pending">decimal</p></td>
+          <td><input type="text" name="amount"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="balance"></td>
+          <td>balance</td>
+          <td><p class="status pending">decimal</p></td>
+          <td><input type="text" name="balance"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="k_symbol"></td>
+          <td>k_symbol</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="k_symbol"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="bank"></td>
+          <td>bank</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="bank"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column[]" value="account"></td>
+          <td>account</td>
+          <td><p class="status shipped">varchar</p></td>
+          <td><input type="text" name="account"></td>
+        </tr>
+      </table>
+      <input type="submit" value="Submit" class="mainpagesubmit">
+      <script>
+        function validateForm() {
+          var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+          if (checkboxes.length === 0) {
+            alert("Please select at least one option.");
+            return false;
+          }
+          return true;
+        }
+      </script>
+      
+    </form>
+    <br><br>
+  </section>
+  <br>
+  <br>
+  <br>
+    <form action="/go_to_page" method="POST" class = "form_move_up">
+    <select name="page" class="my_dropdown">
+        <option value="table_choose.html">Choose different table</option>
+        <option value="main_page.html">Choose different operation</option>
+      </select>
+    <input type="submit" value="Go to page" class="gotopage">
+    </form>
+  </main>
+</body>
+</html>    

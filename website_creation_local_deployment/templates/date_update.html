@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Date Table</title>
+    {% if message %}
+    <script>
+     var message = "{{ message }}";
+     alert(message);
+   </script>
+   {% endif %}
+   
+  <link rel="stylesheet" href="../static/css/style_for_updated.css">
+  </head>
+  <body>
+    <main class="table">
+      <section class="table_header">
+        <br>
+        <h1 style="margin-left: 19px;">Date Table</h1>
+      </section>
+    <form action="/delete_update_insert" method="POST">
+      <section class="table__body">
+        <h3>Provide condition for Update</h3><br><br>
+        <table>
+            <tr>
+              <th>Select</th>
+              <th>Column Name</th>
+              <th>Data Type</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="Date"></td>
+              <td>Date</td>
+              <td><p class="status pending">date</p></td>
+              <td><input type="date" name="Date_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="year"></td>
+              <td>year</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="number" name="year_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="month"></td>
+              <td>month</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="number" name="month_where"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="column_where[]" value="day"></td>
+              <td>day</td>
+              <td><p class="status delivered">Int</p></td>
+              <td><input type="number" name="day_where"></td>
+            </tr>
+          </table>
+          
+          <br><br>
+
+        <label>Provide new value for Update</label><br><br>
+      <table>
+        <tr>
+          <th>Select</th>
+          <th>Column Name</th>
+          <th>Data Type</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="Date"></td>
+          <td>Date</td>
+          <td><p class="status pending">date</p></td>
+          <td><input type="date" name="Date_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="year"></td>
+          <td>year</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="number" name="year_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="month"></td>
+          <td>month</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="number" name="month_new_value"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="column_new_value[]" value="day"></td>
+          <td>day</td>
+          <td><p class="status delivered">Int</p></td>
+          <td><input type="number" name="day_new_value"></td>
+        </tr>
+      </table>
+      <input type="submit" value="Submit" class="mainpagesubmit">
+      
+    </form>
+  </section>
+    <br><br>
+    <form action="/go_to_page" method="POST">
+      <select name="page" class="my_dropdown">
+        <option value="table_choose.html">Choose different table</option>
+        <option value="main_page.html">Choose different operation</option>
+      </select>
+      <input type="submit" value="Go to page" class="gotopage">
+    </form>
+    </main>
+</body>
+</html>

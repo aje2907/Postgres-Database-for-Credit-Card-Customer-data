@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<title>Banking App</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+<body class="bodystyle">
+  <!--<label style="margin-left: 444px;position: absolute;margin-top: 377px;">What operation do you want to do?</label><br>-->
+  <form action="/operation" method="post">
+  <h1 class="fixed-title">Please choose the operation you want to proceed</h1>
+  <div class="container" style="
+  margin-top: -190px;position: relative;
+">
+    <div class="radio-tile-group" style="margin-bottom: -45px;">
+      <div class="input-container">
+        <input id="walk" type="radio" name="operation" value="read">
+        <div class="radio-tile">
+          <ion-icon name="book-outline"></ion-icon>
+          <label for="read">read</label>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input id="bike" type="radio" name="operation" value="insert">
+        <div class="radio-tile">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <label for="insert">insert</label>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input id="car" type="radio" name="operation" value="delete">
+        <div class="radio-tile">
+          <ion-icon name="trash-outline"></ion-icon>
+          <label for="delete">delete</label>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input id="fly" type="radio" name="operation" value="update">
+        <div class="radio-tile">
+          <ion-icon name="create-outline"></ion-icon>
+          <label for="update">update</label>
+        </div>
+      </div>
+    </div>
+    
+  <input type="submit" value="Submit" class="mainpagesubmit">
+  </div>
+</form>
+<form method="post" action="/logout">
+  <button type="submit" class="mainpagelogout">Logout</button>
+</form>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

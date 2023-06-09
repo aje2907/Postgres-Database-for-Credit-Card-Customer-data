@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Read table data </title>
+    <link rel="stylesheet" href="../static/css/tablechoosestyle.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+    <br>
+    <br>
+    <form action="/read" method="post">
+    <div class="card" style="margin-bottom: 10%;width: 135%;">
+    <div class="title">Read table data</div>
+  <div class="content">
+        <label>Which table you want to deal with?</label><br>
+            <input type="radio" name="table" value="loan" id="one">
+            <input type="radio" name="table" value="transactions" id="two">
+            <input type="radio" name="table" value="permanent_order" id="three">
+            <input type="radio" name="table" value="date" id="four">
+            <input type="radio" name="table" value="account" id="five">
+            <input type="radio" name="table" value="card" id="six">
+            <input type="radio" name="table" value="client" id="seven">
+            <input type="radio" name="table" value="disposition" id="eight">
+            <input type="radio" name="table" value="demographics" id="nine">
+            <input type="radio" name="table" value="user_table" id="ten">
+
+        <label for="one" class="box first">
+      <div class="plan">
+      <span class="circle"></span>
+      <span class="yearly">loan</span>
+    </div>
+    </label>
+    <label for="two" class="box second">
+      <div class="plan">
+      <span class="circle"></span>
+      <span class="yearly">transactions</span>
+    </div>
+    </label>
+    <label for="three" class="box third">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">permanent_order</span>
+      </div>
+    </label>
+    <label for="four" class="box fourth">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">date</span>
+      </div>
+    </label>
+    <label for="five" class="box fifth">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">account</span>
+      </div>
+    </label>
+    <label for="six" class="box sixth">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">card</span>
+      </div>
+    </label>
+    <label for="seven" class="box seventh">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">client</span>
+      </div>
+    </label>
+    <label for="eight" class="box eigth">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">disposition</span>
+      </div>
+    </label>
+    <label for="nine" class="box nineth">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">demographics</span>
+      </div>
+    </label>
+    <label for="ten" class="box tenth">
+      <div class="plan">
+      <span class="circle"></span>
+        <span class="yearly">user_table</span>
+      </div>
+    </label>
+    <br>
+     <label>How may rows do you want to display?</label><br>   
+        <input type="radio" name="rows" value="all" checked style="display: revert;">All <br>
+        <input type="radio" name="rows" value="custom" style="display: revert;">Custom: 
+        <input type="number" name="num_rows" min="1"><br>
+        </div>
+ </div>
+        <input type="submit" value="Submit" class="tablechoosesubmit" style="margin-left: 30%;top: 138%;height:27px;">
+    </form>
+<div class="newdiv" style="left: 50%;top: 138%;">
+    <form action="/go_to_page" method="POST">
+  <select name="page" class="my_dropdown">
+          <option value="main_page.html">Choose different operation</option>
+        </select>
+  <input type="submit" value="Go to page" class="gotopage">
+      </form>
+</div>
+</body>
+</html>
