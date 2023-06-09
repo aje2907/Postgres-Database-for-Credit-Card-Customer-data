@@ -1,0 +1,15 @@
+- The dataset is downloaded from the following url:
+https://data.world/lpetrocelli/czech-financial-dataset-real-anonymized-transactions
+
+-We have created script.py file which contains all the required scripts for the database creation. It performs the following:
+1) creates a connection to postgres and creates the database (drops if already exists)
+2) creates the tables and the required relationships between the tables
+3) read the 8 csv files as dataframes and performs necessary preprocessing steps
+4) loads the cleaned data into the respective tables.
+
+-We have included the "activity_trigger_and_roles.sql" file which creates all the roles, assigns the privileges, creates the triggers, functions, and stored procedures.
+
+-The website creation files and local employment files are included in "website_creation_local_deployment" folder. To run the local deployment:
+1) Create an environment and install reuired libraries using requirements.txt
+2) run app.py file - it connects to the local postgres database
+3) all the required html, css and image files are included in the templates and static folders.
